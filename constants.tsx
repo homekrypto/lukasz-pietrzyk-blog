@@ -59,38 +59,38 @@ export const SUCCESS_STORIES: SuccessStory[] = [
 export const TESTIMONIALS: Testimonial[] = [
     { 
         stars: 5, 
-        quote: 'Współpraca z Łukaszem całkowicie zmieniła moje podejście do zarządzania zespołem. W 3 miesiące udało mi się poprawić komunikację w firmie i zwiększyć zaangażowanie pracowników o 40%. To był przełom w mojej karierze menedżerskiej.', 
-        author: 'Anna Kowalska', 
-        role: 'Dyrektor HR, TechCorp', 
-        date: '15.12.2024' 
+        quote: 'Pan Łukasz to wyjątkowy coach - kompetentny, uważny i pełen empatii. Łączy solidne przygotowanie merytoryczne z autentycznym zrozumieniem i spokojem, który daje poczucie bezpieczeństwa. Potrafi słuchać bez oceniania, trafnie wskazuje kierunek pracy nad sobą i daje przestrzeń do prawdziwej zmiany. To specjalista, któremu można w pełni zaufać - i człowiek, którego naprawdę warto spotkać na swojej drodze.', 
+        author: 'Barbara', 
+        role: 'Sprzedawca', 
+        date: '16.06.2025' 
     },
     { 
         stars: 5, 
-        quote: 'Dzięki mentoring z Łukaszem odważyłem się na zmianę branży po 15 latach pracy. Jego wsparcie było nieocenione - pomógł mi odkryć moje prawdziwe mocne strony i zaplanować przejście zawodowe. Dziś jestem szczęśliwszy i lepiej zarabiam.', 
-        author: 'Piotr Nowak', 
-        role: 'Senior Developer', 
-        date: '02.11.2024' 
+        quote: 'Miałam przyjemność pracować z Łukaszem Pietrzykiem jako coachem i z pełnym przekonaniem mogę go polecić każdemu, kto chce się rozwijać – zarówno zawodowo, jak i osobiście. Łukasz to profesjonalista z autentycznym podejściem do drugiego człowieka. Potrafi stworzyć atmosferę zaufania, w której łatwo otworzyć się na refleksję i zmianę. Dzięki naszym spotkaniom poczułam większą klarowność w swoich celach i odzyskałam motywację do działania.', 
+        author: 'Kasia', 
+        role: 'Poszukiwaczka nowego kierunku', 
+        date: '13.06.2025' 
     },
     { 
         stars: 5, 
-        quote: 'Szkolenie z wystąpień publicznych kompletnie przemieniło moje prezentacje. Łukasz nauczył mnie praktycznych technik radzenia sobie ze stresem i budowania pewności siebie. Teraz prowadzę webinary dla 500+ osób bez problemu!', 
-        author: 'Ewa Wiśniewska', 
-        role: 'Marketing Manager, StartupLab', 
-        date: '20.10.2024' 
+        quote: 'Zajęcia prowadzone przez pana Łukasza są naprawdę wyjątkowe. Potrafi skutecznie przekazywać wiedzę na temat sztucznej inteligencji, niezależnie od poziomu zaawansowania uczestników. To zajęcia, które warto polecić każdemu, kto chce rozwijać się w tej dynamicznej dziedzinie. Polecam z całego serca!', 
+        author: 'Jakub', 
+        role: 'Manager Hotelu', 
+        date: '20.01.2025' 
     },
     { 
         stars: 5, 
-        quote: 'Coaching z Łukaszem pomógł mi przejść z pozycji specjalisty na stanowisko dyrektora. Jego metody pracy nad przywództwem i komunikacją dały mi narzędzia, które wykorzystuję codziennie. Polecam każdemu, kto chce rozwijać karierę.', 
-        author: 'Marcin Zawadzki', 
-        role: 'Dyrektor Sprzedaży, GlobalTech', 
-        date: '05.10.2024' 
+        quote: 'Łukasz jest świetnym coachem, profesjonalny i empatyczny, w sposób naturalny i konsekwentny podchodzi do każdego tematu, dzięki niemu podjąłem realne kroki w celu znalezienia lepszej pracy. Polecam każdemu, kto chce zainwestować w swoją przyszłość.', 
+        author: 'Kamil', 
+        role: 'Kierownik', 
+        date: '23.09.2021' 
     },
     { 
         stars: 5, 
-        quote: 'Po 2 latach pracy z Łukaszem moja firma zwiększyła przychody o 80%. Jego coaching biznesowy i strategie rozwoju były kluczowe dla sukcesu. To najlepsza inwestycja, jaką zrobiłem jako przedsiębiorca.', 
-        author: 'Katarzyna Lewandowska', 
-        role: 'CEO, Digital Solutions', 
-        date: '25.09.2024' 
+        quote: 'Coaching uświadomił mi wiele istotnych spraw zaprzątających myśli i pozwolił poukładać najważniejsze życiowe rozterki oraz jasno sprecyzować cel działania. Łukasz jest niezwykle profesjonalnym, empatycznym, życzliwym i cierpliwym człowiekiem o niesamowitym doświadczeniu życiowym oraz bardzo obszernej wiedzy z zakresu psychologii. Szczerze polecam współpracę z Łukaszem jako najlepszą inwestycję w swoją przyszłość.', 
+        author: 'Piotr', 
+        role: 'Tychy', 
+        date: '30.10.2020' 
     }
 ];
 
