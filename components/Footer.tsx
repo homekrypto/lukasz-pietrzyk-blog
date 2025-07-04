@@ -49,66 +49,34 @@ const Footer: React.FC = () => {
 
           {/* Column 2: Newsletter */}
           <div className="flex flex-col items-center md:items-start">
-            <div className="bg-gradient-to-br from-accent/10 to-accent-dark/10 dark:from-accent/20 dark:to-accent-dark/20 p-6 rounded-2xl border border-accent/20 dark:border-accent/30 shadow-lg backdrop-blur-sm w-full max-w-sm hover:shadow-xl transition-all duration-300 group">
-              <div className="flex items-center mb-3">
-                <div className="relative">
-                  <svg className="w-6 h-6 text-accent mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse"></div>
-                </div>
-                <h3 className="font-bold text-lg text-slate-800 dark:text-white">Newsletter</h3>
-              </div>
-              
-              <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-                Otrzymuj <span className="font-medium text-accent group-hover:text-accent-dark transition-colors duration-300">ekskluzywne porady</span> i nowości z zakresu coachingu bezpośrednio na swoją skrzynkę.
+            <div className="w-full max-w-sm">
+              <h3 className="font-semibold text-slate-800 dark:text-white mb-2">Newsletter</h3>
+              <p className="text-sm text-slate-600 dark:text-slate-400 mb-4">
+                Otrzymuj porady z zakresu coachingu.
               </p>
               
               {isSubmitted ? (
-                <div className="text-center py-4 animate-fade-in">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-full mb-3 animate-bounce">
-                    <svg className="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <p className="text-green-600 dark:text-green-400 font-medium">
-                    Dziękujemy za zapisanie się!
-                  </p>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-                    Wkrótce otrzymasz pierwszą wiadomość.
+                <div className="text-center py-2">
+                  <p className="text-green-600 dark:text-green-400 text-sm">
+                    ✓ Dziękujemy za zapisanie się!
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleNewsletterSubmit} className="space-y-3">
-                  <div className="relative group/input">
-                    <input
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Twój adres e-mail"
-                      required
-                      className="w-full px-4 py-3 text-slate-700 dark:text-slate-200 bg-white/80 dark:bg-gray-800/80 border border-slate-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-accent focus:border-accent focus:outline-none transition-all duration-200 placeholder-slate-400 dark:placeholder-slate-500 group-hover/input:shadow-md"
-                    />
-                    <svg className="absolute right-3 top-3.5 w-4 h-4 text-slate-400 group-hover/input:text-accent transition-colors duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
-                    </svg>
-                  </div>
-                  
+                <form onSubmit={handleNewsletterSubmit} className="flex">
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Twój e-mail"
+                    required
+                    className="flex-1 px-3 py-2 text-sm bg-white dark:bg-gray-800 border border-slate-300 dark:border-gray-600 rounded-l-md focus:outline-none focus:border-accent"
+                  />
                   <button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-accent to-accent-dark hover:from-accent-dark hover:to-accent text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 dark:focus:ring-offset-gray-900 active:scale-95"
+                    className="bg-accent hover:bg-accent-dark text-white px-4 py-2 text-sm rounded-r-md transition-colors"
                   >
-                    <span className="flex items-center justify-center">
-                      <svg className="w-4 h-4 mr-2 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                      </svg>
-                      Zapisz się za darmo
-                    </span>
+                    Zapisz się
                   </button>
-                  
-                  <p className="text-xs text-slate-500 dark:text-slate-400 text-center opacity-80 group-hover:opacity-100 transition-opacity duration-300">
-                    Możesz się wypisać w każdej chwili. Szanujemy Twoją prywatność.
-                  </p>
                 </form>
               )}
             </div>

@@ -60,7 +60,7 @@ const Header: React.FC = () => {
   };
 
   const headerClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-    isScrolled ? 'bg-slate-50/80 dark:bg-gray-900/80 backdrop-blur-md shadow-lg' : 'bg-transparent backdrop-blur-sm'
+    isScrolled ? 'bg-slate-50/90 dark:bg-gray-900/90' : 'bg-transparent'
   }`;
   
   return (
@@ -111,7 +111,7 @@ const Header: React.FC = () => {
       
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-slate-50/70 dark:bg-gray-900/70 backdrop-blur-md border-t border-slate-200/30 dark:border-gray-700/30">
+        <div className="md:hidden bg-slate-50/90 dark:bg-gray-900/90 border-t border-slate-200/30 dark:border-gray-700/30">
           <div className="container mx-auto px-6 py-6">
             <GooeyNav
               items={gooeyNavItems}

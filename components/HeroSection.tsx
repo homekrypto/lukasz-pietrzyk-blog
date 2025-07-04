@@ -3,70 +3,43 @@ import React from 'react';
 
 const HeroSection: React.FC = () => {
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center text-white">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute z-0 w-full h-full object-cover"
-        poster="https://picsum.photos/seed/hero-poster/1920/1080"
-      >
-        {/* Placeholder video - replace with actual business/training footage */}
-        <source src="https://assets.mixkit.co/videos/preview/mixkit-business-people-working-in-a-modern-office-4384-large.mp4" type="video/mp4" />
-      </video>
-      <div className="absolute z-10 w-full h-full bg-black/60"></div>
+    <section id="hero" className="relative h-screen flex items-center justify-center text-white overflow-hidden">
+      <div
+        className="absolute z-0 w-full h-full bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')"
+        }}
+      />
+      <div className="absolute z-10 w-full h-full bg-black/50"></div>
       
-      <div className="z-20 text-center animate-fade-in px-4">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-wider">
-          Inwestuj w rozwój, Osiągaj rezultaty
+      <div className="z-20 text-center px-4 max-w-4xl mx-auto">
+        <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-wide text-center">
+          Łukasz Pietrzyk
         </h1>
-        <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-slate-200">
-          Mentoring i szkolenia, które odblokują Twój potencjał i przyspieszą Twoją karierę.
+        <p className="text-xl md:text-2xl font-light mb-8 text-slate-100 text-center">
+          Coach • Mentor • Transformacja
         </p>
         
-        {/* Attractive CTA buttons and stats */}
-        <div className="mt-8 flex flex-col items-center">
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <a 
-              href="#kontakt" 
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg"
-            >
-              Rozpocznij swoją transformację
-            </a>
-            <a 
-              href="#uslugi" 
-              className="border-2 border-white text-white hover:bg-white hover:text-gray-900 font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105"
-            >
-              Poznaj moje usługi
-            </a>
-          </div>
-          
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl md:text-3xl font-bold text-blue-400">500+</div>
-              <div className="text-sm text-slate-200">Zadowolonych klientów</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl md:text-3xl font-bold text-purple-400">10+</div>
-              <div className="text-sm text-slate-200">Lat doświadczenia</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl md:text-3xl font-bold text-green-400">95%</div>
-              <div className="text-sm text-slate-200">Skuteczność</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
-              <div className="text-2xl md:text-3xl font-bold text-yellow-400">24/7</div>
-              <div className="text-sm text-slate-200">Wsparcie</div>
-            </div>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <a 
+            href="#kontakt" 
+            className="bg-white text-slate-900 font-medium py-4 px-10 rounded-full hover:bg-slate-100 transition-all duration-300 uppercase tracking-wider text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          >
+            Rozpocznij współpracę
+          </a>
+          <a 
+            href="#opinie" 
+            className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-medium py-4 px-10 rounded-full transition-all duration-300 uppercase tracking-wider text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          >
+            Zobacz opinie
+          </a>
         </div>
       </div>
-      <div className="absolute bottom-10 z-20 animate-bounce">
+      
+      <div className="absolute bottom-8 z-20 animate-bounce">
         <a href="#o-mnie" aria-label="Przewiń w dół">
-          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M19 9l-7 7-7-7"></path>
           </svg>
         </a>
       </div>

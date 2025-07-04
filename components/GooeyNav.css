@@ -4,6 +4,17 @@
   --color-2: #3498DB;
   --color-3: #2980B9;
   --color-4: #1E3A8A;
+  --nav-text-color: rgb(30, 41, 59); /* slate-800 */
+  --nav-text-color-active: rgb(15, 23, 42); /* slate-900 */
+  --nav-bg-active: rgb(255, 255, 255); /* white */
+  --nav-focus-color: rgb(30, 41, 59); /* slate-800 */
+}
+
+.dark {
+  --nav-text-color: rgb(226, 232, 240); /* slate-200 */
+  --nav-text-color-active: rgb(15, 23, 42); /* slate-900 */
+  --nav-bg-active: rgb(255, 255, 255); /* white */
+  --nav-focus-color: rgb(226, 232, 240); /* slate-200 */
 }
 
 .gooey-nav-container {
@@ -24,7 +35,7 @@
   margin: 0;
   position: relative;
   z-index: 3;
-  color: white;
+  color: var(--nav-text-color);
   text-shadow: 0 1px 1px hsl(205deg 30% 10% / 0.2);
 }
 
@@ -35,11 +46,11 @@
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 0 0.5px 1.5px transparent;
-  color: white;
+  color: var(--nav-text-color);
 }
 
 .gooey-nav-container nav ul li:focus-within:has(:focus-visible) {
-  box-shadow: 0 0 0.5px 1.5px white;
+  box-shadow: 0 0 0.5px 1.5px var(--nav-focus-color);
 }
 
 .gooey-nav-container nav ul li::after {
@@ -47,7 +58,7 @@
   position: absolute;
   inset: 0;
   border-radius: 10px;
-  background: white;
+  background: var(--nav-bg-active);
   opacity: 0;
   transform: scale(0);
   transition: all 0.3s ease;
@@ -55,7 +66,7 @@
 }
 
 .gooey-nav-container nav ul li.active {
-  color: black;
+  color: var(--nav-text-color-active);
   text-shadow: none;
 }
 
@@ -85,14 +96,14 @@
 }
 
 .gooey-nav-container .effect.text {
-  color: white;
+  color: var(--nav-text-color);
   transition: color 0.3s ease;
   font-weight: 500;
   font-size: 0.95rem;
 }
 
 .gooey-nav-container .effect.text.active {
-  color: black;
+  color: var(--nav-text-color-active);
 }
 
 .gooey-nav-container .effect.filter {

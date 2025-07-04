@@ -31,7 +31,7 @@ const Logo: React.FC<LogoProps> = ({ onClick, compact = false }) => {
             textColor="inherit"
             strokeColor="#007BFF"
             minFontSize={24}
-            className="text-slate-800 dark:text-white group-hover:text-accent dark:group-hover:text-accent-dark transition-colors duration-300"
+            className="text-slate-800 dark:text-white group-hover:text-gray-500 dark:group-hover:text-gray-400 transition-colors duration-300"
           />
         </div>
       </a>
@@ -56,13 +56,13 @@ const Logo: React.FC<LogoProps> = ({ onClick, compact = false }) => {
             textColor="inherit"
             strokeColor="#007BFF"
             minFontSize={18}
-            className="text-slate-800 dark:text-white group-hover:text-accent dark:group-hover:text-accent-dark transition-colors duration-300"
+            className="text-slate-800 dark:text-white group-hover:text-gray-500 dark:group-hover:text-gray-400 transition-colors duration-300"
           />
         </div>
         
         {/* Subtitle */}
         <div className="mt-1">
-          <span className="text-xs font-medium text-slate-500 dark:text-slate-400 group-hover:text-accent-dark dark:group-hover:text-accent transition-colors duration-300 tracking-wide">
+          <span className="text-xs font-medium text-slate-500 dark:text-slate-400 group-hover:text-gray-500 dark:group-hover:text-gray-400 transition-colors duration-300 tracking-wide">
             COACHING & MENTORING
           </span>
         </div>

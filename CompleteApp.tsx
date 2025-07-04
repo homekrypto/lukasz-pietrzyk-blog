@@ -6,7 +6,6 @@ import ServicesSection from './components/ServicesSection';
 import ProcessSection from './components/ProcessSection';
 import SuccessStoriesSection from './components/SuccessStoriesSection';
 import TestimonialsSection from './components/TestimonialsSection';
-import ClientsSection from './components/ClientsSection';
 import LocationSection from './components/LocationSection';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
@@ -23,7 +22,6 @@ const CompleteApp = () => {
           <ProcessSection />
           <SuccessStoriesSection />
           <TestimonialsSection />
-          <ClientsSection />
           <LocationSection />
           <ContactSection />
         </main>

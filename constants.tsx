@@ -215,13 +215,13 @@ const PlaceholderLogo = ({ name, theme }: { name: string; theme: 'light' | 'dark
   ];
 
 export const LOCATION_INFO: LocationInfo = {
-  address: 'ul. Przykładowa 123',
+  address: 'ul. Marszałkowska 84/92',
   city: 'Warszawa, Polska',
   description: 'Mój gabinet coachingowy znajduje się w samym sercu Warszawy, w łatwo dostępnej lokalizacji z doskonałym dojazdem komunikacją publiczną.',
   image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1740&auto=format&fit=crop',
   coordinates: {
-    lat: 52.2297,
-    lng: 21.0122
+    lat: 52.2319,
+    lng: 21.0067
   },
   features: [
     'Centralna lokalizacja w Warszawie',
