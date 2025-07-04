@@ -75,3 +75,4 @@ libtorch*
 **/numpy/.dylibs/**
 **/scipy/.dylibs/**
 **/llvmlite/**
+.vercel

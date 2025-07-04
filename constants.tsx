@@ -57,9 +57,41 @@ export const SUCCESS_STORIES: SuccessStory[] = [
 ];
 
 export const TESTIMONIALS: Testimonial[] = [
-    { stars: 5, quote: 'Współpraca z Łukaszem to czysta przyjemność. Jego profesjonalizm i zaangażowanie pomogły mi zrestrukturyzować mój zespół i znacząco poprawić wyniki. Polecam każdemu menedżerowi!', author: 'Anna Kowalska', role: 'Dyrektor HR, TechCorp', date: '15.06.2024' },
-    { stars: 5, quote: 'Dzięki sesjom coachingowym z Łukaszem odważyłem się na zmianę branży. Jego wsparcie, trafne pytania i narzędzia, które mi dał, były bezcenne. To była najlepsza inwestycja w moją karierę.', author: 'Piotr Nowak', role: 'Software Developer', date: '02.05.2024' },
-    { stars: 5, quote: 'Szkolenie z wystąpień publicznych przerosło moje oczekiwania. Łukasz w praktyczny sposób pokazał, jak radzić sobie ze stresem i budować pewność siebie na scenie. Moje prezentacje są teraz na zupełnie innym poziomie.', author: 'Ewa Wiśniewska', role: 'Marketing Manager', date: '20.04.2024' }
+    { 
+        stars: 5, 
+        quote: 'Współpraca z Łukaszem całkowicie zmieniła moje podejście do zarządzania zespołem. W 3 miesiące udało mi się poprawić komunikację w firmie i zwiększyć zaangażowanie pracowników o 40%. To był przełom w mojej karierze menedżerskiej.', 
+        author: 'Anna Kowalska', 
+        role: 'Dyrektor HR, TechCorp', 
+        date: '15.12.2024' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Dzięki mentoring z Łukaszem odważyłem się na zmianę branży po 15 latach pracy. Jego wsparcie było nieocenione - pomógł mi odkryć moje prawdziwe mocne strony i zaplanować przejście zawodowe. Dziś jestem szczęśliwszy i lepiej zarabiam.', 
+        author: 'Piotr Nowak', 
+        role: 'Senior Developer', 
+        date: '02.11.2024' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Szkolenie z wystąpień publicznych kompletnie przemieniło moje prezentacje. Łukasz nauczył mnie praktycznych technik radzenia sobie ze stresem i budowania pewności siebie. Teraz prowadzę webinary dla 500+ osób bez problemu!', 
+        author: 'Ewa Wiśniewska', 
+        role: 'Marketing Manager, StartupLab', 
+        date: '20.10.2024' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Coaching z Łukaszem pomógł mi przejść z pozycji specjalisty na stanowisko dyrektora. Jego metody pracy nad przywództwem i komunikacją dały mi narzędzia, które wykorzystuję codziennie. Polecam każdemu, kto chce rozwijać karierę.', 
+        author: 'Marcin Zawadzki', 
+        role: 'Dyrektor Sprzedaży, GlobalTech', 
+        date: '05.10.2024' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Po 2 latach pracy z Łukaszem moja firma zwiększyła przychody o 80%. Jego coaching biznesowy i strategie rozwoju były kluczowe dla sukcesu. To najlepsza inwestycja, jaką zrobiłem jako przedsiębiorca.', 
+        author: 'Katarzyna Lewandowska', 
+        role: 'CEO, Digital Solutions', 
+        date: '25.09.2024' 
+    }
 ];
 
 const PlaceholderLogo = ({ name, theme }: { name: string; theme: 'light' | 'dark' }) => (
