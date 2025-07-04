@@ -59,10 +59,45 @@ export const SUCCESS_STORIES: SuccessStory[] = [
 export const TESTIMONIALS: Testimonial[] = [
     { 
         stars: 5, 
-        quote: 'Pan Łukasz to wyjątkowy coach - kompetentny, uważny i pełen empatii. Łączy solidne przygotowanie merytoryczne z autentycznym zrozumieniem i spokojem, który daje poczucie bezpieczeństwa. Potrafi słuchać bez oceniania, trafnie wskazuje kierunek pracy nad sobą i daje przestrzeń do prawdziwej zmiany. To specjalista, któremu można w pełni zaufać - i człowiek, którego naprawdę warto spotkać na swojej drodze.', 
+        quote: 'Pan Łukasz jest świetnym coachem, jest profesjonalistą w tym co robi. Dużo się od niego nauczyłam, napewno takie kursy przydadzą się w życiu. Jest bardzo empatyczny i wyrozumiały, podchodzi do każdej sprawy z osobna i motywuje do działania. Polecam :)', 
+        author: 'Wiktoria', 
+        role: 'Kursantka', 
+        date: '17.06.2025' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Pan Łukasz jest bardzo wyrozumiały, sympatyczny, pomocny i ma dużą wiedzę na temat coachingu i ogólną. Bardzo mi pomógł z motywacją do dalszych działań. Widziałem jak pan Łukasz się stara pomóc mi oraz reszcie uczestników - jest świetny.', 
+        author: 'Fabian', 
+        role: 'Handlowiec', 
+        date: '17.06.2025' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Bardzo dobry coach, świetnie mi pomógł w drodze do celu. Jest pełny energii oraz sympatii, świetnie prowadzi zajęcia, jest wyrozumiały. Ogólnie podziwiam go - do każdego podchodzi indywidualnie oraz z spokojem.', 
+        author: 'Sebastian', 
+        role: 'Pracownik produkcji', 
+        date: '17.06.2025' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Pan Łukasz to wyjątkowy coach - kompetentny, uważny i pełen empatii. Łączy solidne przygotowanie merytoryczne z autentycznym zrozumieniem i spokojem, który daje poczucie bezpieczeństwa. Potrafi słuchać bez oceniania, trafnie wskazuje kierunek pracy nad sobą i daje przestrzeń do prawdziwej zmiany. To specjalista, któremu można w pełni zaufać.', 
         author: 'Barbara', 
         role: 'Sprzedawca', 
         date: '16.06.2025' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Świetny Coach, dużo mogłam się nauczyć z jego lekcji i nauk. Zrozumiałam jakie mam wady i zalety. Szlifowałam swoje zalety żeby się rozwijać i zwalczałam swoje wady. Wyszłam ze strefy komfortu i dążę do osiągnięcia sukcesu zawodowego.', 
+        author: 'Paulina', 
+        role: 'Zawodowe', 
+        date: '13.06.2025' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Współpraca na najwyższym poziomie. Szczerze to nie spodziewałem się że coaching może tak wiele zmienić we własnym podejściu do życia, do myślenia o sobie i o innych. Człowiek bardzo kulturalny i serdeczny, otwarty a nie sztywny. Na prawdę - gorąco polecam.', 
+        author: 'Paweł', 
+        role: 'Filozof', 
+        date: '13.06.2025' 
     },
     { 
         stars: 5, 
@@ -70,6 +105,27 @@ export const TESTIMONIALS: Testimonial[] = [
         author: 'Kasia', 
         role: 'Poszukiwaczka nowego kierunku', 
         date: '13.06.2025' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Pan Łukasz to dobry specjalista, sesje są miłe i bez niepotrzebnego stresu. Daje czas by przyswoić materiał w swoim zakresie nauki i opisuje wszystko szczegółowo co upraszcza wchłonięcie danego materiału. Atmosfera jest przyjazna a rozmowy szczere, jest empatyczny, miły i szczery. Polecam dla każdego kto może mieć problemy z założeniem firmy.', 
+        author: 'Bolek', 
+        role: 'Cukiernik', 
+        date: '31.05.2025' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Rozmowa bardzo komunikatywna - w ciągu godziny doprowadził do tego że może zmienię podejście do swojej pracy oraz przyszłości. Bardzo podobała mi się jego wypowiedź, mam nadzieję że jeszcze się spotkamy w przyszłości.', 
+        author: 'Przemysław', 
+        role: 'Cukiernik', 
+        date: '22.05.2025' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Byłam na szkoleniu u pana Łukasza i muszę przyznać, że ma świetny warsztat psychologiczny. Dobrze rozumie ludzi i przykłada się do wytłumaczenia niewidocznych na pierwszy rzut oka procesów. Bardzo polecam.', 
+        author: 'Magda', 
+        role: 'Kierownik działu', 
+        date: '16.02.2025' 
     },
     { 
         stars: 5, 
@@ -87,10 +143,59 @@ export const TESTIMONIALS: Testimonial[] = [
     },
     { 
         stars: 5, 
-        quote: 'Coaching uświadomił mi wiele istotnych spraw zaprzątających myśli i pozwolił poukładać najważniejsze życiowe rozterki oraz jasno sprecyzować cel działania. Łukasz jest niezwykle profesjonalnym, empatycznym, życzliwym i cierpliwym człowiekiem o niesamowitym doświadczeniu życiowym oraz bardzo obszernej wiedzy z zakresu psychologii. Szczerze polecam współpracę z Łukaszem jako najlepszą inwestycję w swoją przyszłość.', 
-        author: 'Piotr', 
-        role: 'Tychy', 
-        date: '30.10.2020' 
+        quote: 'Bardzo dobry coach, warty polecenia. Ma ogromną wiedzę i potrafi przekazywać ją w ciekawy sposób. Motywuje do rozwoju i stawiania sobie poprzeczki coraz wyżej. Po każdej rozmowie czułam się pobudzona do działania. Bardzo profesjonalne podejście.', 
+        author: 'Justyna', 
+        role: 'Kierownik', 
+        date: '23.09.2021' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Pan Łukasz jest osobą, która posiada wielką wiedzę oraz co najważniejsze umiejętności jej przekazania. Dzięki szkoleniu z Łukaszem moja wiara we własne możliwości poszybowała w górę. Łukasz jest osobą pomocną, wyrozumiałą, przy czym bardzo profesjonalną.', 
+        author: 'Denis', 
+        role: 'Specjalista ds. obsługi klienta', 
+        date: '02.07.2021' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Pan Łukasz bardzo dobry człowiek oraz specjalista. Na zajęciach daje z siebie 110%. Dał mi motywację do działania oraz dzięki niemu nabrałam pewności siebie. Polecam. Jestem wdzięczna za to ile wniósł do mojego życia.', 
+        author: 'Justyna', 
+        role: 'Pracownik biurowy', 
+        date: '01.07.2021' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Świetny specjalista. Widać, że w swoją pracę wkłada całe serce. Pomógł mi poukładać kilka ważnych rzeczy i uświadomił, że można na wiele spraw popatrzeć od innej strony. Jego empatia, profesjonalizm i cierpliwość pokazała mi, że trafiłam do odpowiedniej osoby. Każda rozmowa z Łukaszem daje pozytywnego kopa.', 
+        author: 'Sylwia', 
+        role: 'Pracownik biurowy', 
+        date: '28.05.2021' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Bardzo profesjonalny coach, zawsze uprzejmy, skłonny do pomocy. Świetnie mi się z nim współpracowało. Uświadomił mi wiele rzeczy z których nie zdawałem sobie sprawy, zmienił mój punkt widzenia na wiele spraw. Bardzo się cieszę że miałem okazję z Panem Łukaszem współpracować.', 
+        author: 'Kajetan', 
+        role: 'Osoba prywatna', 
+        date: '14.03.2021' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Profesjonalny i empatyczny coach, który potrafi postawą oraz swoją pracą pozwolić poczuć się bezpiecznie w trakcie odkrywania swojego potencjału oraz celów. Bardzo pomogły mi te sesje w lepszym radzeniu sobie ze stresem oraz zarządzaniu zespołem.', 
+        author: 'Ada', 
+        role: 'Kierownik', 
+        date: '11.03.2021' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Łukasz to osoba, która potrafi pomóc w obiektywny sposób bez ocen zadając pytania, dzięki którym można natrafić na swoje nie tylko ograniczenia, ale przede wszystkim mocne i ignorowane strony. Polecam z nim współpracę osobom, które chcą awansować lub zmienić pracę. Szkoda, że coachingu nie ma w szkołach.', 
+        author: 'Natalia', 
+        role: 'Handel', 
+        date: '14.12.2020' 
+    },
+    { 
+        stars: 5, 
+        quote: 'Pan Łukasz jako coach jest numerem jeden. Rozwinąłem w sobie wiele wcześniej zblokowanych cech, np. umiejętność otwartego wyrażania siebie, samokrytyka, rozwiązywanie problemów na szczeblu zalążka, uwydatnianie swoich mocnych stron. Prowadzi zajęcia w luźny sposób, dostosowany do kryteriów każdego uczestnika. Już od pierwszych lekcji dopadły mnie refleksje na swój temat.', 
+        author: 'Daniel', 
+        role: 'Pracownik produkcyjny', 
+        date: '22.11.2020' 
     }
 ];
 
