@@ -1,7 +1,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import CompleteApp from './CompleteApp';
+import AppWithRouter from './AppWithRouter';
 import './styles/globals.css';
 
 const rootElement = document.getElementById('root');
@@ -12,6 +12,6 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <CompleteApp />
+    <AppWithRouter />
   </React.StrictMode>
 );

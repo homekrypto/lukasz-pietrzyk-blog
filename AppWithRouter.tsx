@@ -3,7 +3,7 @@ import { ThemeProvider } from './components/ThemeContext';
 import HomePage from './pages/HomePage';
 import TestPage from './pages/TestPage';
 
-const CompleteApp = () => {
+function App() {
   return (
     <ThemeProvider>
       <Router>
@@ -16,6 +16,6 @@ const CompleteApp = () => {
       </Router>
     </ThemeProvider>
   );
-};
+}
 
-export default CompleteApp;
+export default App;
