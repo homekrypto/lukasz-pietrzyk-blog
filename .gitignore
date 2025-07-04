@@ -61,7 +61,17 @@ pids
 *.seed
 *.pid.lock
 
-# Large ML/AI libraries
+# Large binary files
 *.dylib
 *.so
 *.dll
+*.exe
+libtorch*
+
+# Torch and ML libraries  
+**/torch/**
+**/torchvision/**
+**/torchaudio/**
+**/numpy/.dylibs/**
+**/scipy/.dylibs/**
+**/llvmlite/**
