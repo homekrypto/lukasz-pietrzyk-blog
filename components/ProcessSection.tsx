@@ -50,7 +50,7 @@ const ProcessSection: React.FC = () => {
         <div className="w-full max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden mx-auto">
           {/* Step indicators */}
           <div className="flex items-center justify-center p-8 bg-gray-50 dark:bg-gray-800">
-            <div className="flex items-center justify-center space-x-6 w-full max-w-3xl mx-auto">
+            <div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-6 space-y-6 sm:space-y-0 w-full max-w-3xl mx-auto">
               {steps.map((step, index) => (
                 <React.Fragment key={step.id}>
                   <motion.div
@@ -82,16 +82,21 @@ const ProcessSection: React.FC = () => {
                       )}
                     </motion.div>
                   </motion.div>
-                  
+                  {/* Connector: horizontal on desktop, vertical on mobile */}
                   {index < steps.length - 1 && (
-                    <div className="flex-1 h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden min-w-[80px] max-w-[120px]">
+                    <div
+                      className="w-1 h-16 sm:w-16 sm:h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden flex-shrink-0 mx-auto"
+                    >
                       <motion.div
-                        className="h-full bg-gradient-to-r from-blue-500 to-green-500 rounded-full"
-                        initial={{ width: "0%" }}
-                        animate={{
-                          width: currentStep > step.id ? "100%" : "0%"
-                        }}
-                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        className="bg-gradient-to-b sm:bg-gradient-to-r from-blue-500 to-green-500 rounded-full"
+                        initial={{ width: '0%', height: '0%' }}
+                        animate={
+                          typeof window !== 'undefined' && window.innerWidth < 640
+                            ? { height: currentStep > step.id ? '100%' : '0%' }
+                            : { width: currentStep > step.id ? '100%' : '0%' }
+                        }
+                        style={{ width: '100%', height: '100%' }}
+                        transition={{ duration: 0.5, ease: 'easeInOut' }}
                       />
                     </div>
                   )}
