@@ -71,7 +71,7 @@ const Header: React.FC = () => {
           <Logo onClick={(e) => handleLinkClick(e, '#hero')} />
         </div>
         {/* Mobile Logo */}
-        <div className="block sm:hidden">
+        <div className="block sm:hidden flex items-center h-full justify-center" style={{ minHeight: '40px' }}>
           <Logo onClick={(e) => handleLinkClick(e, '#hero')} compact />
         </div>
         
