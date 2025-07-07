@@ -53,53 +53,56 @@ const ProcessSection: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-6 space-y-6 sm:space-y-0 w-full max-w-3xl mx-auto">
               {steps.map((step, index) => (
                 <React.Fragment key={step.id}>
-                  <motion.div
-                    className={`relative cursor-pointer flex items-center justify-center`}
-                    onClick={() => goToStep(step.id)}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
+                  {/* Hide stepper on mobile, show only on sm and up */}
+                  <div className="hidden sm:flex flex-col items-center">
                     <motion.div
-                      className={`w-14 h-14 rounded-full flex items-center justify-center font-bold text-base transition-all duration-300 ${
-                        currentStep === step.id
-                          ? 'bg-blue-600 text-white shadow-lg'
-                          : currentStep > step.id
-                          ? 'bg-green-600 text-white'
-                          : 'bg-gray-300 dark:bg-gray-600 text-gray-600 dark:text-gray-300'
-                      }`}
-                      initial={false}
-                      animate={{
-                        scale: currentStep === step.id ? 1.1 : 1,
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      {currentStep > step.id ? (
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
-                      ) : (
-                        <span className="flex items-center justify-center">{step.id}</span>
-                      )}
-                    </motion.div>
-                  </motion.div>
-                  {/* Connector: horizontal on desktop, vertical on mobile */}
-                  {index < steps.length - 1 && (
-                    <div
-                      className="w-1 h-16 sm:w-16 sm:h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden flex-shrink-0 mx-auto"
+                      className={`relative cursor-pointer flex items-center justify-center`}
+                      onClick={() => goToStep(step.id)}
+                      whileHover={{ scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
                     >
                       <motion.div
-                        className="bg-gradient-to-b sm:bg-gradient-to-r from-blue-500 to-green-500 rounded-full"
-                        initial={{ width: '0%', height: '0%' }}
-                        animate={
-                          typeof window !== 'undefined' && window.innerWidth < 640
-                            ? { height: currentStep > step.id ? '100%' : '0%' }
-                            : { width: currentStep > step.id ? '100%' : '0%' }
-                        }
-                        style={{ width: '100%', height: '100%' }}
-                        transition={{ duration: 0.5, ease: 'easeInOut' }}
-                      />
-                    </div>
-                  )}
+                        className={`w-14 h-14 rounded-full flex items-center justify-center font-bold text-base transition-all duration-300 ${
+                          currentStep === step.id
+                            ? 'bg-blue-600 text-white shadow-lg'
+                            : currentStep > step.id
+                            ? 'bg-green-600 text-white'
+                            : 'bg-gray-300 dark:bg-gray-600 text-gray-600 dark:text-gray-300'
+                        }`}
+                        initial={false}
+                        animate={{
+                          scale: currentStep === step.id ? 1.1 : 1,
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {currentStep > step.id ? (
+                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                        ) : (
+                          <span className="flex items-center justify-center">{step.id}</span>
+                        )}
+                      </motion.div>
+                    </motion.div>
+                    {/* Connector: horizontal on desktop, vertical on mobile (desktop only) */}
+                    {index < steps.length - 1 && (
+                      <div
+                        className="w-1 h-16 sm:w-16 sm:h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden flex-shrink-0 mx-auto"
+                      >
+                        <motion.div
+                          className="bg-gradient-to-b sm:bg-gradient-to-r from-blue-500 to-green-500 rounded-full"
+                          initial={{ width: '0%', height: '0%' }}
+                          animate={
+                            typeof window !== 'undefined' && window.innerWidth < 640
+                              ? { height: currentStep > step.id ? '100%' : '0%' }
+                              : { width: currentStep > step.id ? '100%' : '0%' }
+                          }
+                          style={{ width: '100%', height: '100%' }}
+                          transition={{ duration: 0.5, ease: 'easeInOut' }}
+                        />
+                      </div>
+                    )}
+                  </div>
                 </React.Fragment>
               ))}
             </div>
