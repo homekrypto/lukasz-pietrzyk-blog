@@ -17,7 +17,10 @@ const Logo: React.FC<LogoProps> = ({ onClick, compact = false }) => {
   if (compact) {
     return (
       <a href="#hero" onClick={handleClick} className="block group focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-lg p-2">
-        <div style={{ position: 'relative', height: '40px', width: '80px' }}>
+        <div
+          style={{ position: 'relative', height: '32px', width: '64px' }}
+          className="transition-all duration-300"
+        >
           <TextPressure
             text="ŁP"
             fontFamily="Inter, system-ui, -apple-system, sans-serif"
@@ -30,7 +33,7 @@ const Logo: React.FC<LogoProps> = ({ onClick, compact = false }) => {
             italic={false}
             textColor="inherit"
             strokeColor="#007BFF"
-            minFontSize={24}
+            minFontSize={19}
             className="text-slate-800 dark:text-white group-hover:text-gray-500 dark:group-hover:text-gray-400 transition-colors duration-300"
           />
         </div>
