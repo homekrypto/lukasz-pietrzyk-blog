@@ -66,13 +66,14 @@ const Header: React.FC = () => {
   return (
     <header className={headerClasses}>
       <nav className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Desktop Logo */}
-        <div className="hidden sm:block">
-          <Logo onClick={(e) => handleLinkClick(e, '#hero')} />
-        </div>
-        {/* Mobile Logo */}
-        <div className="flex items-center h-full justify-center sm:hidden" style={{ minHeight: '40px' }}>
-          <Logo onClick={(e) => handleLinkClick(e, '#hero')} compact />
+        {/* Single Logo: Compact on mobile, full on desktop */}
+        <div className="flex items-center h-full justify-center">
+          <span className="block sm:hidden">
+            <Logo onClick={(e) => handleLinkClick(e, '#hero')} compact />
+          </span>
+          <span className="hidden sm:block">
+            <Logo onClick={(e) => handleLinkClick(e, '#hero')} />
+          </span>
         </div>
         
         {/* Desktop GooeyNav */}
