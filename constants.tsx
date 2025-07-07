@@ -215,19 +215,19 @@ const PlaceholderLogo = ({ name, theme }: { name: string; theme: 'light' | 'dark
   ];
 
 export const LOCATION_INFO: LocationInfo = {
-  address: 'ul. Marszałkowska 84/92',
-  city: 'Warszawa, Polska',
-  description: 'Mój gabinet coachingowy znajduje się w samym sercu Warszawy, w łatwo dostępnej lokalizacji z doskonałym dojazdem komunikacją publiczną.',
-  image: 'https://images.unsplash.com/photo-1613977257363-707ba9348227?q=80&w=1740&auto=format&fit=crop',
+  address: 'Jana III Sobieskiego 28',
+  city: '41-100 Siemianowice Śląskie',
+  description: 'Gabinet coachingowy Łukasza Pietrzyka znajduje się w Siemianowicach Śląskich, w spokojnej i dogodnej lokalizacji.',
+  image: '',
   coordinates: {
-    lat: 52.2319,
-    lng: 21.0067
+    lat: 50.2997865,
+    lng: 19.0192481
   },
   features: [
-    'Centralna lokalizacja w Warszawie',
-    'Doskonały dojazd komunikacją publiczną',
-    'Parking dla klientów',
+    'Dogodna lokalizacja w Siemianowicach Śląskich',
+    'Łatwy dojazd samochodem i komunikacją publiczną',
+    'Parking w pobliżu',
     'Komfortowe warunki spotkań',
-    'Sesje online również dostępne'
+    'Możliwość sesji online'
   ]
 };

@@ -1,45 +1,51 @@
 
 import React from 'react';
 
+
+
 const HeroSection: React.FC = () => {
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center text-white overflow-hidden">
-      <div
-        className="absolute z-0 w-full h-full bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80')"
-        }}
+    <section id="hero" className="relative min-h-[80vh] flex items-center justify-center bg-black overflow-hidden">
+      {/* Background Image */}
+      <img
+        src="/business-man-6583629_1280.jpg"
+        alt="Business man hero background"
+        className="absolute inset-0 w-full h-full object-cover z-0 opacity-80"
+        draggable="false"
+        style={{ pointerEvents: 'none', userSelect: 'none', zIndex: 0 }}
       />
-      <div className="absolute z-10 w-full h-full bg-black/50"></div>
-      
-      <div className="z-20 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-light mb-6 tracking-wide text-center">
-          Łukasz Pietrzyk
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/60 z-10" />
+
+      {/* Content */}
+      <div className="relative z-20 flex flex-col items-center justify-center w-full px-4 py-16">
+        <h1 className="text-3xl md:text-5xl font-bold text-white text-center mb-4 drop-shadow-2xl tracking-tight">
+          Witaj w świecie rozwoju i sukcesu
         </h1>
-        <p className="text-xl md:text-2xl font-light mb-8 text-slate-100 text-center">
-          Coach • Mentor • Transformacja
+        <p className="text-lg md:text-2xl text-slate-200 text-center max-w-2xl mb-8 font-light">
+          Profesjonalny coaching, mentoring i transformacja dla Ciebie lub Twojego zespołu.
         </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a 
-            href="#kontakt" 
-            className="bg-white text-slate-900 font-medium py-4 px-10 rounded-full hover:bg-slate-100 transition-all duration-300 uppercase tracking-wider text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+        <div className="flex flex-col sm:flex-row gap-2 w-full max-w-xs mx-auto justify-center items-center">
+          <a
+            href="#kontakt"
+            className="bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 uppercase tracking-wider text-base shadow-md hover:shadow-xl text-center"
           >
-            Rozpocznij współpracę
+            Skontaktuj się
           </a>
-          <a 
-            href="#opinie" 
-            className="border-2 border-white text-white hover:bg-white hover:text-slate-900 font-medium py-4 px-10 rounded-full transition-all duration-300 uppercase tracking-wider text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          <a
+            href="#opinie"
+            className="border-2 border-white text-white hover:bg-white hover:text-blue-800 font-semibold py-3 px-8 rounded-full transition-all duration-300 uppercase tracking-wider text-base shadow-md hover:shadow-xl text-center"
           >
-            Zobacz opinie
+            Opinie klientów
           </a>
         </div>
       </div>
-      
-      <div className="absolute bottom-8 z-20 animate-bounce">
+
+      {/* Scroll Down Indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 animate-bounce">
         <a href="#o-mnie" aria-label="Przewiń w dół">
-          <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M19 9l-7 7-7-7"></path>
+          <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
           </svg>
         </a>
       </div>

@@ -23,31 +23,27 @@ const LocationSection: React.FC = () => {
             Lokalizacja
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            {LOCATION_INFO.description}
+            Gabinet coachingowy Łukasza Pietrzyka
+            <br />
+            Jana III Sobieskiego 28<br />
+            41-100 Siemianowice Śląskie
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Location Image */}
-          <div className="relative">
-            <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
-              <img
-                src={LOCATION_INFO.image}
-                alt="Gabinet coachingowy Łukasza Pietrzyka"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-              <div className="absolute bottom-8 left-8 text-white">
-                <div className="flex items-center space-x-3 mb-2">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <MapIcon />
-                  </div>
-                  <span className="font-semibold text-lg">Gabinet coachingowy Łukasza Pietrzyka</span>
-                </div>
-                <p className="text-base opacity-90 ml-11">Warszawa, Polska</p>
-                <p className="text-sm opacity-75 ml-11">Centrum miasta</p>
-              </div>
-            </div>
+          {/* Google Map Embed */}
+          <div className="relative h-96 rounded-3xl overflow-hidden shadow-2xl">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5097.157959287116!2d19.01924807577167!3d50.29978649820157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716d1ece7f859a9%3A0x37f4bc03ac0d7ed6!2sJana%20III%20Sobieskiego%2028%2C%2041-100%20Siemianowice%20%C5%9Al%C4%85skie!5e0!3m2!1spl!2spl!4v1751882662252!5m2!1spl!2spl"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Lokalizacja Gabinetu"
+              className="w-full h-full"
+            ></iframe>
           </div>
 
           {/* Location Details */}
@@ -63,10 +59,10 @@ const LocationSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 dark:text-white text-lg">
-                      {LOCATION_INFO.address}
+                      Jana III Sobieskiego 28
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 mt-1">
-                      {LOCATION_INFO.city}
+                      41-100 Siemianowice Śląskie
                     </p>
                   </div>
                 </div>
@@ -88,24 +84,7 @@ const LocationSection: React.FC = () => {
               </div>
             </div>
 
-            {/* Map Preview */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-700 dark:to-gray-600 rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                <MapIcon />
-              </div>
-              <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                Interaktywna mapa
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
-                Sprawdź dokładną lokalizację i zaplanuj swoją wizytę
-              </p>
-              <div className="flex justify-center">
-                <button className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                  <MapIcon />
-                  <span className="ml-3">Otwórz mapę</span>
-                </button>
-              </div>
-            </div>
+            {/* Map Preview removed as requested */}
           </div>
         </div>
 

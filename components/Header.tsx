@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { NAV_LINKS } from '../constants';
 import Logo from './Logo';
 import GooeyNav from './GooeyNav';
-import ThemeToggle from './ThemeToggle';
+// import ThemeToggle from './ThemeToggle';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -92,7 +92,7 @@ const Header: React.FC = () => {
 
         {/* Right side - Theme Toggle and Mobile Menu */}
         <div className="flex items-center space-x-4">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           
           {/* Mobile Menu Button */}
           <div className="md:hidden">
@@ -109,24 +109,35 @@ const Header: React.FC = () => {
         </div>
       </nav>
       
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Improved Responsive Overlay */}
       {isMenuOpen && (
-        <div className="md:hidden bg-slate-50/90 dark:bg-gray-900/90 border-t border-slate-200/30 dark:border-gray-700/30">
-          <div className="container mx-auto px-6 py-6">
-            <GooeyNav
-              items={gooeyNavItems}
-              particleCount={8}
-              particleDistances={[40, 5]}
-              particleR={60}
-              initialActiveIndex={0}
-              animationTime={400}
-              timeVariance={150}
-              colors={[1, 2, 3, 1]}
-              onItemClick={(item) => {
-                handleGooeyNavClick(item);
-                setIsMenuOpen(false);
-              }}
-            />
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm transition-opacity duration-300 md:hidden">
+          <div className="relative w-full max-w-xs mx-auto bg-slate-50 dark:bg-gray-900 rounded-lg shadow-lg p-8 flex flex-col items-center animate-slideIn">
+            {/* Close Button */}
+            <button
+              className="absolute top-4 right-4 text-2xl text-slate-700 dark:text-slate-200 focus:outline-none"
+              onClick={() => setIsMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              &times;
+            </button>
+            {/* Mobile Nav Items */}
+            <nav className="flex flex-col gap-6 mt-8 w-full">
+              {gooeyNavItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-lg font-semibold text-slate-800 dark:text-slate-100 text-center py-2 rounded hover:bg-slate-200 dark:hover:bg-gray-800 transition-colors"
+                  onClick={e => {
+                    e.preventDefault();
+                    handleGooeyNavClick(item);
+                    setIsMenuOpen(false);
+                  }}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </nav>
           </div>
         </div>
       )}
