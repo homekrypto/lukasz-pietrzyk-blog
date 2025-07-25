@@ -8,7 +8,7 @@ const ProcessSection: React.FC = () => {
   const steps = [
     {
       id: 1,
-      title: "Konsultacja",
+      title: "Sesja Zapoznawcza",
       description: "Bezpłatna rozmowa poznawcza, w której omówimy Twoje cele i wyzwania. To pierwszy krok do zrozumienia Twoich potrzeb i oczekiwań."
     },
     {
@@ -62,25 +62,27 @@ const ProcessSection: React.FC = () => {
                       whileTap={{ scale: 0.95 }}
                     >
                       <motion.div
-                        className={`w-14 h-14 rounded-full flex items-center justify-center font-bold text-base transition-all duration-300 ${
+                        className={`w-20 h-20 rounded-full flex items-center justify-center font-extrabold text-3xl transition-all duration-300 shadow-2xl border-4 ${
                           currentStep === step.id
-                            ? 'bg-blue-600 text-white shadow-lg'
+                            ? 'bg-blue-600 text-white border-blue-400 shadow-blue-400/40'
                             : currentStep > step.id
-                            ? 'bg-green-600 text-white'
-                            : 'bg-gray-300 dark:bg-gray-600 text-gray-600 dark:text-gray-300'
+                            ? 'bg-green-600 text-white border-green-400 shadow-green-400/40'
+                            : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 border-gray-300 dark:border-gray-600 shadow-gray-400/20'
                         }`}
                         initial={false}
                         animate={{
-                          scale: currentStep === step.id ? 1.1 : 1,
+                          scale: currentStep === step.id ? 1.12 : 1,
                         }}
                         transition={{ duration: 0.3 }}
                       >
                         {currentStep > step.id ? (
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                          </svg>
+                          <span className="absolute left-0 top-0 w-full h-full flex items-center justify-center">
+                            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                            </svg>
+                          </span>
                         ) : (
-                          <span className="flex items-center justify-center">{step.id}</span>
+                          <span className="absolute left-0 top-0 w-full h-full flex items-center justify-center">{step.id}</span>
                         )}
                       </motion.div>
                     </motion.div>
@@ -175,19 +177,16 @@ const ProcessSection: React.FC = () => {
                 ))}
               </div>
               
-              <motion.button
-                onClick={nextStep}
-                disabled={currentStep === steps.length}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  currentStep === steps.length
-                    ? 'text-gray-400 cursor-not-allowed'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                }`}
-                whileHover={currentStep !== steps.length ? { scale: 1.05 } : {}}
-                whileTap={currentStep !== steps.length ? { scale: 0.95 } : {}}
-              >
-                Dalej →
-              </motion.button>
+              {currentStep !== steps.length && (
+                <motion.button
+                  onClick={nextStep}
+                  className={`px-6 py-3 rounded-full font-medium transition-all duration-300 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Dalej →
+                </motion.button>
+              )}
             </div>
           </div>
         </div>

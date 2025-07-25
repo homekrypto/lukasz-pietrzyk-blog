@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './components/ThemeContext';
 import HomePage from './pages/HomePage';
 import TestPage from './pages/TestPage';
+import SpotkaniePage from './pages/SpotkaniePage';
+import CennikPage from './pages/CennikPage';
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/test" element={<TestPage />} />
+            <Route path="/spotkanie" element={<SpotkaniePage />} />
+            <Route path="/cennik" element={<CennikPage />} />
           </Routes>
         </div>
       </Router>

@@ -10,7 +10,7 @@ const ContactSection: React.FC = () => {
           Kontakt
         </h2>
         <p className="text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-10 max-w-xl mx-auto leading-relaxed">
-          Skontaktuj się ze mną i umów na <span className="font-semibold text-blue-700 dark:text-blue-400">bezpłatną sesję wstępną</span>.<br />
+          Skontaktuj się ze mną i umów na <span className="font-semibold text-blue-700 dark:text-blue-400">spotkanie</span>.<br />
           Razem zdefiniujemy Twoje cele i zaplanujemy pierwsze kroki.
         </p>
         <div className="flex flex-col md:flex-row gap-8 justify-center items-center mb-12">

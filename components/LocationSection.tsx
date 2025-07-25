@@ -100,7 +100,7 @@ const LocationSection: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
               <a
-                href="#kontakt"
+                href="/spotkanie"
                 className="inline-flex items-center px-10 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
               >
                 Umów spotkanie

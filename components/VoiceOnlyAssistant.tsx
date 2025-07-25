@@ -187,7 +187,7 @@ const VoiceOnlyAssistant: React.FC<VoiceOnlyAssistantProps> = ({ className = '' 
     }
     
     // Contact and consultation
-    if (lowerMessage.includes('spotkanie') || lowerMessage.includes('konsultacja') || lowerMessage.includes('kontakt') || lowerMessage.includes('umówić')) {
+    if (lowerMessage.includes('spotkanie') || lowerMessage.includes('jak pracujemy') || lowerMessage.includes('kontakt') || lowerMessage.includes('umówić')) {
       return 'Chętnie się z Tobą spotkam! Oferuję bezpłatną konsultację, gdzie omówimy Twoje potrzeby i cele. Możesz skontaktować się ze mną przez formularz na stronie lub bezpośrednio mailowo.';
     }
     

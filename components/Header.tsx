@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { NAV_LINKS } from '../constants';
 import Logo from './Logo';
 import GooeyNav from './GooeyNav';
@@ -14,6 +15,9 @@ const Header: React.FC = () => {
     href: link.href
   }));
 
+  const location = useLocation();
+  const navigate = useNavigate();
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -24,34 +28,43 @@ const Header: React.FC = () => {
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
-    const targetId = href.substring(1);
-    const targetElement = document.getElementById(targetId);
-
+    // Always navigate to '/' with section info if not on homepage
+    if (href.startsWith('#') && location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: href } });
+      setIsMenuOpen(false);
+      return;
+    }
+    // On homepage, smooth scroll to anchor
+    const targetId = href.startsWith('#') ? href.substring(1) : '';
+    const targetElement = targetId ? document.getElementById(targetId) : null;
     if (targetElement) {
       const headerElement = document.querySelector('header');
       const headerOffset = headerElement ? headerElement.offsetHeight : 70;
       const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset;
-
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
     }
-
     setIsMenuOpen(false);
   };
 
   const handleGooeyNavClick = (item: { label: string; href: string }) => {
-    const targetId = item.href.substring(1);
-    const targetElement = document.getElementById(targetId);
-
+    // Always navigate to '/' with section info if not on homepage
+    if (item.href.startsWith('#') && location.pathname !== '/') {
+      navigate('/', { state: { scrollTo: item.href } });
+      setIsMenuOpen(false);
+      return;
+    }
+    // On homepage, smooth scroll to anchor
+    const targetId = item.href.startsWith('#') ? item.href.substring(1) : '';
+    const targetElement = targetId ? document.getElementById(targetId) : null;
     if (targetElement) {
       const headerElement = document.querySelector('header');
       const headerOffset = headerElement ? headerElement.offsetHeight : 70;
       const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - headerOffset;
-
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
