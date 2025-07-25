@@ -20,7 +20,7 @@ export const NAV_LINKS: NavLink[] = [
   { name: 'Oferta', href: '#oferta' },
   { name: 'Historie Sukcesu', href: '#historie-sukcesu' },
   { name: 'Opinie', href: '#opinie' },
-  { name: 'Lokalizacja', href: '#lokalizacja' },
+  { name: 'Cennik', href: '/cennik' },
   { name: 'Kontakt', href: '#kontakt' },
 ];
 
