@@ -6,6 +6,7 @@ import SpotkaniePage from './pages/SpotkaniePage';
 import CennikPage from './pages/CennikPage';
 import BlogPage from './pages/BlogPage';
 import BlogAdmin from './pages/BlogAdmin';
+import BlogPostPage from './pages/BlogPostPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/spotkanie" element={<SpotkaniePage />} />
             <Route path="/cennik" element={<CennikPage />} />
             <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/blog-admin" element={<BlogAdmin />} />
           </Routes>
         </div>

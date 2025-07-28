@@ -15,7 +15,6 @@ const EvaluationIcon = () => <svg xmlns="http://www.w3.org/2000/svg" className="
 
 // Content
 export const NAV_LINKS: NavLink[] = [
-  { name: 'Start', href: '#hero' },
   { name: 'O mnie', href: '#o-mnie' },
   { name: 'Oferta', href: '#oferta' },
   { name: 'Historie Sukcesu', href: '#historie-sukcesu' },

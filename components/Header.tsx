@@ -51,25 +51,30 @@ const Header: React.FC = () => {
   };
 
   const handleGooeyNavClick = (item: { label: string; href: string }) => {
-    // Always navigate to '/' with section info if not on homepage
-    if (item.href.startsWith('#') && location.pathname !== '/') {
-      navigate('/', { state: { scrollTo: item.href } });
-      setIsMenuOpen(false);
-      return;
+    if (item.href.startsWith('#')) {
+      // Anchor link: scroll or navigate to homepage with scroll
+      if (location.pathname !== '/') {
+        navigate('/', { state: { scrollTo: item.href } });
+        setIsMenuOpen(false);
+        return;
+      }
+      const targetId = item.href.substring(1);
+      const targetElement = targetId ? document.getElementById(targetId) : null;
+      if (targetElement) {
+        const headerElement = document.querySelector('header');
+        const headerOffset = headerElement ? headerElement.offsetHeight : 70;
+        const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+        const offsetPosition = elementPosition - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
+        });
+      }
+    } else {
+      // Route link: use SPA navigation
+      navigate(item.href);
     }
-    // On homepage, smooth scroll to anchor
-    const targetId = item.href.startsWith('#') ? item.href.substring(1) : '';
-    const targetElement = targetId ? document.getElementById(targetId) : null;
-    if (targetElement) {
-      const headerElement = document.querySelector('header');
-      const headerOffset = headerElement ? headerElement.offsetHeight : 70;
-      const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-      const offsetPosition = elementPosition - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
-    }
+    setIsMenuOpen(false);
   };
 
   const headerClasses = `fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
