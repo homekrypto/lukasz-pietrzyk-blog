@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 import Logo from './Logo';
 
@@ -46,14 +45,6 @@ const Footer: React.FC = () => {
             <p className="mt-4 text-sm text-slate-500 dark:text-slate-400">
               © {new Date().getFullYear()} Łukasz Pietrzyk. Wszelkie prawa zastrzeżone.
             </p>
-            <div className="mt-3">
-              <Link 
-                to="/test"
-                className="text-sm text-accent hover:text-accent-dark dark:text-accent-dark dark:hover:text-accent transition-colors"
-              >
-                Infinite Menu Test
-              </Link>
-            </div>
           </div>
 
           {/* Column 2: Newsletter */}
