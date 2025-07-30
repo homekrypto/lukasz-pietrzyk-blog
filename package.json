@@ -4,16 +4,15 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "next dev",
+    "build": "next build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "start": "node pietrzyk/index.supabase.js"
+    "start": "next start"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.39.7",
     "@types/react-router-dom": "^5.3.3",
     "express": "^5.1.0",
-    "firebase": "^12.0.0",
     "firebase-admin": "^13.4.0",
     "framer-motion": "^12.23.0",
     "gl-matrix": "^3.4.3",
@@ -22,8 +21,7 @@
     "react": "^18.2.0",
     "react-datepicker": "^8.4.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^7.6.3",
-    "@supabase/supabase-js": "^2.39.7"
+    "react-router-dom": "^7.6.3"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
