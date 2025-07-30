@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+const { onRequest } = require('firebase-functions/v2/https');
 
 const availableSlots = [
   '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00'
 ];
 
 const SpotkaniePage: React.FC = () => {
-  const [selectedDate, setSelectedDate] = useState<string>('');
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedSlot, setSelectedSlot] = useState<string>('');
   const [form, setForm] = useState({ name: '', email: '', callback: false });
   const [submitted, setSubmitted] = useState(false);
@@ -20,11 +23,34 @@ const SpotkaniePage: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Wyślij potwierdzenie na email, zapisz rezerwację do Google Sheet
-    // Wybrana data: selectedDate, godzina: selectedSlot
-    setSubmitted(true);
+    try {
+      const reservationData = {
+        name: form.name,
+        email: form.email,
+        message: form.callback ? 'Proszę o kontakt telefoniczny lub mailowy z potwierdzeniem spotkania' : '',
+        start: selectedDate ? `${selectedDate.toISOString().split('T')[0]}T${selectedSlot}:00` : '',
+        end: selectedDate ? `${selectedDate.toISOString().split('T')[0]}T${selectedSlot}:59` : '',
+      };
+      console.log('Submitting reservation to backend:', reservationData);
+      const response = await fetch('https://us-central1-lukaszpietrzyk-72409.cloudfunctions.net/spotkanie', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reservationData),
+      });
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        const errorData = await response.json();
+        alert('Błąd podczas rezerwacji: ' + (errorData.error || 'Spróbuj ponownie.'));
+      }
+    } catch (error) {
+      console.error('Error submitting reservation:', error);
+      alert('Błąd podczas rezerwacji. Spróbuj ponownie.');
+    }
   };
 
   return (
@@ -34,27 +60,28 @@ const SpotkaniePage: React.FC = () => {
         <div className="container mx-auto max-w-xl px-6 mt-20">
           <h1 className="text-4xl font-bold mb-10 mt-8 text-center">Zaplanuj spotkanie</h1>
           <p className="mb-8 text-center text-lg text-gray-700 dark:text-gray-300">
-            Wybierz dogodny termin i zarezerwuj 1-godzinne spotkanie. Po rezerwacji otrzymasz potwierdzenie na email, a my skontaktujemy się z Tobą.
+            Wybierz dogodny termin w poniższym kalendarzu Google, a następnie ręcznie wpisz datę w formularzu rezerwacji. Po rezerwacji otrzymasz potwierdzenie na email, a my skontaktujemy się z Tobą.
           </p>
           <div className="mb-8">
-            <label htmlFor="date" className="block text-xl font-semibold mb-2">Wybierz datę spotkania:</label>
-            <input
-              type="date"
-              id="date"
-              name="date"
-              value={selectedDate}
-              onChange={e => setSelectedDate(e.target.value)}
-              className="mb-4 w-full px-4 py-2 border rounded-lg"
-              required
-            />
-            <h2 className="text-xl font-semibold mb-2">Dostępne godziny:</h2>
+            <div className="mt-8">
+              <label htmlFor="datepicker" className="block text-xl font-semibold mb-2">Wybierz datę spotkania:</label>
+              <DatePicker
+                id="datepicker"
+                selected={selectedDate}
+                onChange={(date: Date | null) => setSelectedDate(date)}
+                dateFormat="yyyy-MM-dd"
+                className="mb-4 w-full px-4 py-2 border rounded-lg"
+                placeholderText="Kliknij, aby wybrać datę"
+                required
+              />
+            </div>
+            <h2 className="text-xl font-semibold mb-2 mt-8">Dostępne godziny:</h2>
             <div className="grid grid-cols-3 gap-4">
               {availableSlots.map(slot => (
                 <button
                   key={slot}
                   className={`py-2 px-4 rounded-lg border font-medium ${selectedSlot === slot ? 'bg-blue-600 text-white' : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200'}`}
                   onClick={() => setSelectedSlot(slot)}
-                  disabled={!selectedDate}
                 >
                   {slot}
                 </button>

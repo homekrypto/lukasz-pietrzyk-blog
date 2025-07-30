@@ -22,12 +22,6 @@ const LocationSection: React.FC = () => {
           <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-6">
             Lokalizacja
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Gabinet coachingowy Łukasza Pietrzyka
-            <br />
-            Jana III Sobieskiego 28<br />
-            41-100 Siemianowice Śląskie
-          </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -59,7 +53,7 @@ const LocationSection: React.FC = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 dark:text-white text-lg">
-                      Jana III Sobieskiego 28
+                      Jana III Sobieskiego 28/1
                     </p>
                     <p className="text-gray-600 dark:text-gray-300 mt-1">
                       41-100 Siemianowice Śląskie

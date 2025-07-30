@@ -214,9 +214,9 @@ const PlaceholderLogo = ({ name, theme }: { name: string; theme: 'light' | 'dark
   ];
 
 export const LOCATION_INFO: LocationInfo = {
-  address: 'Jana III Sobieskiego 28',
+  address: 'Jana III Sobieskiego 28/1',
   city: '41-100 Siemianowice Śląskie',
-  description: 'Gabinet coachingowy Łukasza Pietrzyka znajduje się w Siemianowicach Śląskich, w spokojnej i dogodnej lokalizacji.',
+  description: 'Znajduje się w Siemianowicach Śląskich, w spokojnej i dogodnej lokalizacji.',
   image: '',
   coordinates: {
     lat: 50.2997865,

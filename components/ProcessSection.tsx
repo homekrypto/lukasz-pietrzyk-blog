@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -28,36 +27,22 @@ const ProcessSection: React.FC = () => {
     }
   ];
 
-  const nextStep = () => {
-    setCurrentStep(prev => prev < steps.length ? prev + 1 : prev);
-  };
-
-  const prevStep = () => {
-    setCurrentStep(prev => prev > 1 ? prev - 1 : prev);
-  };
-
-  const goToStep = (step: number) => {
-    setCurrentStep(step);
-  };
-
   return (
     <section id="proces" className="py-24 bg-white dark:bg-gray-900 flex items-center justify-center min-h-screen">
       <div className="container mx-auto px-6 max-w-5xl flex flex-col items-center">
         <h2 className="text-4xl md:text-5xl font-light text-gray-900 dark:text-white mb-16 text-center tracking-wide">
           Jak pracujemy
         </h2>
-        
         <div className="w-full max-w-4xl bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden mx-auto">
           {/* Step indicators */}
           <div className="flex items-center justify-center p-8 bg-gray-50 dark:bg-gray-800">
             <div className="flex flex-col sm:flex-row items-center justify-center sm:space-x-6 space-y-6 sm:space-y-0 w-full max-w-3xl mx-auto">
               {steps.map((step, index) => (
                 <React.Fragment key={step.id}>
-                  {/* Hide stepper on mobile, show only on sm and up */}
                   <div className="hidden sm:flex flex-col items-center">
                     <motion.div
                       className={`relative cursor-pointer flex items-center justify-center`}
-                      onClick={() => goToStep(step.id)}
+                      onClick={() => setCurrentStep(step.id)}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -76,17 +61,16 @@ const ProcessSection: React.FC = () => {
                         transition={{ duration: 0.3 }}
                       >
                         {currentStep > step.id ? (
-                          <span className="absolute left-0 top-0 w-full h-full flex items-center justify-center">
+                          <span className="flex items-center justify-center w-full h-full">
                             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                             </svg>
                           </span>
                         ) : (
-                          <span className="absolute left-0 top-0 w-full h-full flex items-center justify-center">{step.id}</span>
+                          <span className="absolute inset-0 flex items-center justify-center">{step.id}</span>
                         )}
                       </motion.div>
                     </motion.div>
-                    {/* Connector: horizontal on desktop, vertical on mobile (desktop only) */}
                     {index < steps.length - 1 && (
                       <div
                         className="w-1 h-16 sm:w-16 sm:h-1 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden flex-shrink-0 mx-auto"
@@ -109,7 +93,6 @@ const ProcessSection: React.FC = () => {
               ))}
             </div>
           </div>
-
           {/* Step content */}
           <div className="relative h-96 overflow-hidden flex items-center justify-center">
             <AnimatePresence mode="wait">
@@ -130,7 +113,6 @@ const ProcessSection: React.FC = () => {
                   >
                     {steps[currentStep - 1].title}
                   </motion.h3>
-                  
                   <motion.p
                     className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-center"
                     initial={{ opacity: 0, y: 20 }}
@@ -143,12 +125,11 @@ const ProcessSection: React.FC = () => {
               </motion.div>
             </AnimatePresence>
           </div>
-
           {/* Navigation buttons */}
           <div className="flex justify-center items-center p-8 bg-gray-50 dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700">
             <div className="flex justify-between items-center w-full max-w-2xl mx-auto">
               <motion.button
-                onClick={prevStep}
+                onClick={() => setCurrentStep(currentStep > 1 ? currentStep - 1 : 1)}
                 disabled={currentStep === 1}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
                   currentStep === 1
@@ -160,7 +141,6 @@ const ProcessSection: React.FC = () => {
               >
                 ← Wstecz
               </motion.button>
-              
               <div className="flex justify-center space-x-2">
                 {steps.map((step) => (
                   <motion.div
@@ -170,16 +150,15 @@ const ProcessSection: React.FC = () => {
                         ? 'bg-blue-600 w-8'
                         : 'bg-gray-300 dark:bg-gray-600'
                     }`}
-                    onClick={() => goToStep(step.id)}
+                    onClick={() => setCurrentStep(step.id)}
                     whileHover={{ scale: 1.2 }}
                     style={{ cursor: 'pointer' }}
                   />
                 ))}
               </div>
-              
               {currentStep !== steps.length && (
                 <motion.button
-                  onClick={nextStep}
+                  onClick={() => setCurrentStep(currentStep < steps.length ? currentStep + 1 : steps.length)}
                   className={`px-6 py-3 rounded-full font-medium transition-all duration-300 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

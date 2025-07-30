@@ -33,11 +33,11 @@ const ContactSection: React.FC = () => {
               <div className="flex flex-col items-center">
                 <h3 className="text-xl font-semibold text-blue-900 dark:text-blue-200 mb-1">E-mail</h3>
                 <a 
-                  href="mailto:lukaszpietrzyk@icloud.com" 
+                  href="mailto:info@lukaszpietrzyk.pl" 
                   className="text-lg text-blue-700 dark:text-blue-400 font-medium hover:underline break-all px-4 py-2 rounded-xl bg-gray-100 dark:bg-gray-800 min-w-[260px] text-center"
                   style={{ minWidth: '260px', display: 'inline-block' }}
                 >
-                  lukaszpietrzyk@icloud.com
+                  info@lukaszpietrzyk.pl
                 </a>
               </div>
             </SpotlightCard>
